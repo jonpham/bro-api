@@ -15,3 +15,14 @@ bro_list.each do |bro|
   Bro.create({name: bro[:name],bio: bro[:bio],fav_food: bro[:fav_food],job: bro[:job]})
 end
 
+tanktop_list=[]
+sizes = ['S','M','L','XL','XXL','XS']
+
+200.times do 
+  tanktop_list.push({color: Faker::Color.color_name, size: sizes.sample, pattern: Faker::Pokemon.name})
+end
+
+tanktop_list.each do | tanktop |
+  Tanktop.create(color: tanktop[:color] , size:tanktop[:size], pattern: tanktop[:pattern], bro_id: Bro.ids.sample )
+end
+
