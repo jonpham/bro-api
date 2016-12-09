@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+bro_list=[]
+100.times do
+  bro_list.push({name: Faker::Stoked.celebroty,bio:Faker::Stoked.bio,fav_food:Faker::Stoked.food,job:Faker::Stoked.job})
+end
+
+bro_list.each do |bro|
+  Bro.create({name: bro[:name],bio: bro[:bio],fav_food: bro[:fav_food],job: bro[:job]})
+end
+
