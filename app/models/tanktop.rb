@@ -1,0 +1,2 @@
+class Tanktop < ApplicationRecord
+end
