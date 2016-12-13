@@ -1,4 +1,4 @@
-class V1::BrosController < ApplicationController
+class Api::V1::BrosController < ApplicationController
   
   def index
     @bros = Bro.all
