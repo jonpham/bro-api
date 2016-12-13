@@ -1,3 +1,4 @@
+json.id       bro.id
 json.name     bro.name
 json.bio      bro.bio
 json.fav_food bro.fav_food
