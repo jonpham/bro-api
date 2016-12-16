@@ -6,6 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Bro.destroy_all
+Tanktop.destroy_all
+
 bro_list=[]
 100.times do
   bro_list.push({name: Faker::Stoked.celebroty,bio:Faker::Stoked.bio,fav_food:Faker::Stoked.food,job:Faker::Stoked.job})
@@ -25,4 +28,13 @@ end
 tanktop_list.each do | tanktop |
   Tanktop.create(color: tanktop[:color] , size:tanktop[:size], pattern: tanktop[:pattern], bro_id: Bro.ids.sample )
 end
+
+User.create({
+  first_name: "asdf", 
+  last_name: "querty",
+  email: "user@inter.net",
+  password: "asdf",
+  password_confirmation: "asdf",
+  api_key: "1234567890"
+})
 
