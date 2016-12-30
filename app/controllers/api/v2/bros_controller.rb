@@ -1,5 +1,8 @@
 class Api::V2::BrosController < ApplicationController
   
+  def js_home
+  end
+  
   def index
     @bros = Bro.all
   end
