@@ -41,7 +41,7 @@
         </tr>
   <!-- Loop Start -->
           <tr ng-repeat="bro in bros | filter : {name: nameFilter, fav_food: foodFilter, $: searchFilter } | orderBy:propertyName:reverse track by $index ">
-            <td><a href="/bros/{{bro.id}}"> {{ bro.name }} </a></td>
+            <td><a href="api/v2/bros/{{bro.id}}"> {{ bro.name }} </a></td>
             <td> {{ bro.job }} </td>
             <td> {{ bro.fav_food }} </td>
             <td> {{ bro.bio }} </td>
