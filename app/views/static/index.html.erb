@@ -13,7 +13,9 @@
 <!--Add Filter -->
     <hr>
     <div class="filter_input">
-    <strong>Filter By: </strong><input ng-model="nameFilter">
+    <strong>Search: </strong><input ng-model="searchFilter"><br />
+    <strong>Filter By Name: </strong><input ng-model="nameFilter"><br />
+    <strong>Filter By Favorite Food: </strong><input ng-model="foodFilter"><br />
     </div>
     <table style='border: 1px'>
       <tr>
@@ -23,7 +25,7 @@
         <th>Bio</th>
       </tr>
 <!-- Loop Start -->
-        <tr ng-repeat="bro in bros | filter : {name: nameFilter} track by $index ">
+        <tr ng-repeat="bro in bros | filter : {name: nameFilter, fav_food: foodFilter, $: searchFilter } track by $index ">
           <td><a href="/bros/{{bro.id}}"> {{ bro.name }} </a></td>
           <div ng-
           <td> {{ bro.job }} </td>
