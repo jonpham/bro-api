@@ -19,13 +19,22 @@
     </div>
     <table style='border: 1px'>
       <tr>
-        <th>Name</th>
-        <th>Job</th>
-        <th>Favorite Food</th>
+        <th>
+          <button ng-click="sortBy('name')">Name</button>
+          <span class="sortorder" ng-show="propertyName === 'name'" ng-class="{reverse: reverse}"></span>
+        </th>
+        <th>
+          <button ng-click="sortBy('job')">Job</button>
+          <span class="sortorder" ng-show="propertyName === 'job'" ng-class="{reverse: reverse}"></span>
+        </th>
+        <th>
+          <button ng-click="sortBy('fav_food')">Favorite Food</button>
+          <span class="sortorder" ng-show="propertyName === 'fav_food'" ng-class="{reverse: reverse}"></span>
+        </th>
         <th>Bio</th>
       </tr>
 <!-- Loop Start -->
-        <tr ng-repeat="bro in bros | filter : {name: nameFilter, fav_food: foodFilter, $: searchFilter } track by $index ">
+        <tr ng-repeat="bro in bros | filter : {name: nameFilter, fav_food: foodFilter, $: searchFilter } | orderBy:propertyName:reverse track by $index ">
           <td><a href="/bros/{{bro.id}}"> {{ bro.name }} </a></td>
           <div ng-
           <td> {{ bro.job }} </td>

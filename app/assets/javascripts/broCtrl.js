@@ -61,6 +61,15 @@
         var bro_index = $scope.bros.indexOf(bro);
         $scope.bros.splice(bro_index,1);
       }
+
+      $scope.propertyName = 'name';
+      $scope.reverse = false;
+
+      $scope.sortBy = function(propertyValue) {
+        $scope.reverse = ($scope.propertyName === propertyValue) ? !$scope.reverse : false;
+        console.log("Sorted by: "+$scope.propertyName+" in Reverse = "+$scope.reverse+" order.")
+        $scope.propertyName = propertyValue;
+      }
     }
   );
 }
