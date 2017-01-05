@@ -17,31 +17,37 @@
     <strong>Filter By Name: </strong><input ng-model="nameFilter"><br />
     <strong>Filter By Favorite Food: </strong><input ng-model="foodFilter"><br />
     </div>
-    <table style='border: 1px'>
-      <tr>
-        <th>
-          <button ng-click="sortBy('name')">Name</button>
-          <span class="sortorder" ng-show="propertyName === 'name'" ng-class="{reverse: reverse}"></span>
-        </th>
-        <th>
-          <button ng-click="sortBy('job')">Job</button>
-          <span class="sortorder" ng-show="propertyName === 'job'" ng-class="{reverse: reverse}"></span>
-        </th>
-        <th>
-          <button ng-click="sortBy('fav_food')">Favorite Food</button>
-          <span class="sortorder" ng-show="propertyName === 'fav_food'" ng-class="{reverse: reverse}"></span>
-        </th>
-        <th>Bio</th>
-      </tr>
-<!-- Loop Start -->
-        <tr ng-repeat="bro in bros | filter : {name: nameFilter, fav_food: foodFilter, $: searchFilter } | orderBy:propertyName:reverse track by $index ">
-          <td><a href="/bros/{{bro.id}}"> {{ bro.name }} </a></td>
-          <div ng-
-          <td> {{ bro.job }} </td>
-          <td> {{ bro.fav_food }} </td>
-          <td> {{ bro.bio }} </td>
+    <hr>
+    <h2>Da Bros</h2>
+    <div id="bro_data">
+      <table>
+        <tr>
+          <th>
+            <button ng-click="sortBy('name')">Name</button>
+            <span class="sortorder" ng-show="propertyName === 'name'" ng-class="{reverse: reverse}"></span>
+          </th>
+          <th>
+            <button ng-click="sortBy('job')">Job</button>
+            <span class="sortorder" ng-show="propertyName === 'job'" ng-class="{reverse: reverse}"></span>
+          </th>
+          <th>
+            <button ng-click="sortBy('fav_food')">Favorite Food</button>
+            <span class="sortorder" ng-show="propertyName === 'fav_food'" ng-class="{reverse: reverse}"></span>
+          </th>
+          <th>
+            <button ng-click="sortBy('bio')">Bio</button>
+            <span class="sortorder" ng-show="propertyName === 'bio'" ng-class="{reverse: reverse}"></span>
+          </th>
         </tr>
-<!-- Loop End -->
-    </table>
+  <!-- Loop Start -->
+          <tr ng-repeat="bro in bros | filter : {name: nameFilter, fav_food: foodFilter, $: searchFilter } | orderBy:propertyName:reverse track by $index ">
+            <td><a href="/bros/{{bro.id}}"> {{ bro.name }} </a></td>
+            <td> {{ bro.job }} </td>
+            <td> {{ bro.fav_food }} </td>
+            <td> {{ bro.bio }} </td>
+          </tr>
+  <!-- Loop End -->
+      </table>
+    </div>
   </div>
 </div
